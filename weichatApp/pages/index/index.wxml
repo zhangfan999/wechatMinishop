@@ -1,0 +1,96 @@
+<!--index.wxml-->
+
+<!-- 幻灯片 -->
+<swiper indicator-dots autoplay interval="5000" duration="1000">
+  <block wx:for="{{banner}}" wx:key="{{item.id}}">
+    <swiper-item>
+      <image bindtap='showDetail' data-goods-id="{{item.gid}}" src="{{domain}}uploads/{{item.img}}?{{random}}" class="swiper-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 搜索框 -->
+<view class='view_search'>
+  <view class='view_searchbg'>
+    <input placeholder-style='#999' bindinput='inputing' bindconfirm='searchGoods' class='input_search' placeholder='请输入您所搜索的商品'>请输入您所搜索的商品</input>
+  </view>
+</view>
+
+<!-- 快捷图标一 -->
+<view class='func-area'>
+  <view bindtap='showCategory'>
+    <image src='/images/icon_all.png' mode='aspectFill' class='orange'></image>
+    <text>全部分类</text>
+  </view>
+
+  <view bindtap='showCarts'>
+    <image src='/images/icon_carticon.png' mode='aspectFill' class='orange'></image>
+    <text>购物车</text>
+  </view>
+
+  <view bindtap='showAddress'>
+    <image src='/images/icon_seller.png' mode='aspectFill' class='orange'></image>
+    <text>地址管理</text>
+  </view>
+
+  <view bindtap='showMoney'>
+    <image src='/images/icon_shopping.png' mode='aspectFill' class='orange'></image>
+    <text>我的钱包</text>
+  </view>
+</view>
+
+<!-- 快捷图标二 -->
+<view class='func-area'>
+  <view bindtap='showOrder'>
+    <image src='/images/icon_orders.png' mode='aspectFill' class='orange'></image>
+    <text>我的订单</text>
+  </view>
+
+  <view bindtap='showCollect'>
+    <image src='/images/icon_ssc.png' mode='aspectFill' class='orange'></image>
+    <text>我的收藏</text>
+  </view>
+
+  <view bindtap='showMine'>
+    <image src='/images/icon_collect.png' mode='aspectFill' class='orange'></image>
+    <text>个人中心</text>
+  </view>
+
+  <view bindtap='showAboutus'>
+    <image src='/images/icon_membericon.png' mode='aspectFill' class='orange'></image>
+    <text>关于我们</text>
+  </view>
+</view>
+
+<!-- 商品广告 -->
+<view class='view-ad' wx:if="{{ad[0]}}">
+  <view class='ad-hot'>
+    <image bindtap='showDetail' data-goods-id="{{ad[0].gid}}" src='{{domain}}uploads/{{ad[0].img}}?{{random}}'></image>
+    <image bindtap='showDetail' data-goods-id="{{ad[1].gid}}" src='{{domain}}uploads/{{ad[1].img}}?{{random}}'></image>
+  </view>
+  <view class='ad-hot'>
+    <image bindtap='showDetail' data-goods-id="{{ad[2].gid}}" src='{{domain}}uploads/{{ad[2].img}}?{{random}}'></image>
+    <image bindtap='showDetail' data-goods-id="{{ad[3].gid}}" src='{{domain}}uploads/{{ad[3].img}}?{{random}}'></image>
+  </view>
+</view>
+
+<!-- 商品楼层展示 -->
+<view class='container-class' wx:for="{{goods}}" wx:for-item="items" wx:key="key">
+  <view class='container-goods'>
+    <view class='category_title'>
+      <view class='redline'></view>
+      <text class='caption'>{{items.name}}</text>
+    </view>
+
+    <view class='main-goods'>
+      <view class='single-goods' wx:for="{{items.list}}" wx:key="{{item.id}}" bindtap='showDetail' data-goods-id="{{item.id}}">
+        <image class='avatar' src='{{domain}}uploads/{{item.img}}?{{random}}' mode='aspectFill'></image>
+        <text class='title'>{{item.name}}</text>
+        <view class='summary'>
+          <text class='price'>￥{{item.price}}元</text>
+          <text class='sale'>浏览{{item.views}}次</text>       
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

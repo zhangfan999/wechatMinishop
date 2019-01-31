@@ -1,0 +1,53 @@
+<!--pages/member/index/index.wxml-->
+<view>
+
+  <view class='userinfo'>
+    <!-- <image class='userinfo-avatar' src='{{userInfo.head}}'></image>
+    <text class='userinfo-nickname'>{{userInfo.nickname}}</text> -->
+    <!-- 第三季修正 -->
+    <open-data type="userAvatarUrl" class='userinfo-avatar-new'></open-data>
+    <open-data type="userNickName" class='userinfo-nickname'></open-data>
+  </view>
+
+  <view class='order-area'>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/icon_order.png'></image>
+      <text>待付款</text>
+    </view>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/icon_order.png'></image>
+      <text>待发货</text>
+    </view>
+    <view bindtap='orderList' class='order'>
+      <image src='/images/icon_order.png'></image>
+      <text>已完成</text>
+    </view>
+  </view>
+
+  <!-- 第三季修正 -->
+  <button wx:if="{{!login}}" open-type="getUserInfo" bindgetuserinfo="login" class='tableviewcell'>
+    <image src='/images/pj.png'></image>
+    <text>用户登录</text>
+  </button>
+  <view bindtap='navigateToMoney' class='tableviewcell'>
+    <image src='/images/qb.png'></image>
+    <text>我的钱包</text>
+  </view>
+  <view bindtap='navigateToOrder' class='tableviewcell'>
+    <image src='/images/dd.png'></image>
+    <text>全部订单</text>
+  </view>
+  <view bindtap='navigateToCollect' class='tableviewcell'>
+    <image src='/images/sc.png'></image>
+    <text>我的收藏</text>
+  </view>
+  <view bindtap='navigateToAddress' class='tableviewcell'>
+    <image src='/images/dw.png'></image>
+    <text>地址管理</text>
+  </view>
+  <view bindtap='navigateToAboutus' class='tableviewcell'>
+    <image src='/images/jf.png'></image>
+    <text>关于我们</text>
+  </view>
+
+</view>

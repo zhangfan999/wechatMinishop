@@ -1,0 +1,16 @@
+/* pages/member/aboutus/aboutus.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  line-height: 80px;
+  color: #333;
+  text-align: center;
+  display: block;
+}
+
+.info {
+  line-height: 60px;
+}

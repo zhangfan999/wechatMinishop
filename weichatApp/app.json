@@ -1,0 +1,58 @@
+﻿{
+  "pages":[
+    "pages/index/index",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/goods/detail/detail",
+    "pages/goods/list/list",
+    "pages/member/money/money",
+    "pages/member/collect/collect",
+    "pages/member/aboutus/aboutus",
+    "pages/order/list/list",
+    "pages/order/submit/submit",
+    "pages/order/details/details",
+    "pages/order/payment/payment",
+    "pages/order/result/result",
+    "pages/order/pay/pay",
+    "pages/address/list/list",
+    "pages/address/add/add",
+    "pages/address/edit/edit",
+    "pages/member/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0FBB70",
+    "navigationBarTitleText": "微信小程序商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/icon_cate.png",
+        "selectedIconPath": "images/icon_cate_selected.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/icon_cart.png",
+        "selectedIconPath": "images/icon_cart_selected.png"
+      },
+      {
+        "pagePath": "pages/member/index/index",
+        "text": "我",
+        "iconPath": "images/icon_member.png",
+        "selectedIconPath": "images/icon_member_selected.png"
+      }
+    ]
+  }
+}

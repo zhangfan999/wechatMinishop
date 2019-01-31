@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单商品</title>
+    <meta name="keywords" content="订单商品">
+    <meta name="description" content="订单商品">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="__ADMIN__/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="__ADMIN__/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="__ADMIN__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__ADMIN__/css/animate.min.css" rel="stylesheet">
+    <link href="__ADMIN__/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+    <script src="__ADMIN__/js/jquery.min.js?v=2.1.4"></script>
+    <link href="__ADMIN__/css/admin.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeIn">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="tabs-container">
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane active">
+                            <div class="panel-body">
+                                <form method="post" class="form-horizontal" action="">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th width="10%">商品ID</th>
+                                                    <th width="30%">商品名称</th>
+                                                    <th width="20%">图片</th>
+                                                    <th width="20%">价格</th>
+                                                    <th width="20%">数量</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {volist name="lists" id="vo"}
+                                                    <tr>
+                                                        <td>{$vo.gid}</td>
+                                                        <td style="text-align:left">{$vo.goods.name}</td>
+                                                        <td><img src="__UPLOADS__/{$vo.goods.img}" alt="{$vo.goods.name}" width="36"></td>
+                                                        <td>{$vo.price}</td>
+                                                        <td>{$vo.num}</td>
+                                                    </tr>
+                                                {/volist}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="__ADMIN__/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__ADMIN__/js/content.min.js?v=1.0.0"></script>
+    <script src="__ADMIN__/js/layer_hplus.js"></script>
+    <script src="__ADMIN__/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+    <script src="__ADMIN__/js/plugins/cropper/cropper.min.js"></script>
+    <script src="__ADMIN__/js/demo/form-advanced-demo.min.js"></script>
+</body>
+
+</html>
